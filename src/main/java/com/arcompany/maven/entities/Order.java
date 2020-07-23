@@ -7,7 +7,11 @@ package com.arcompany.maven.entities;
 
 import java.io.Serializable;
 import java.sql.Date;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.GregorianCalendar;
 import java.util.Hashtable;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -17,12 +21,17 @@ import java.util.Map;
 public class Order implements Serializable{
     
     private Long id;
-    private Map<Product,Integer> productList;
-    private Date date;
+    private List<Product> productList;
+    private List<Integer> quantityList;
+//    private DateTimeFormatter dtf;
+//    private LocalDateTime currentDate;
     
-    public Order(Map<Product,Integer> productList, Date date){
+    public Order(List<Product> productList, List<Integer> quantityList){
         this.productList = productList;
-        this.date = date;
+        this.quantityList = quantityList;
+//        dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss"); 
+//        currentDate = LocalDateTime.now(); 
+        
     }
 
     public long getId() {
@@ -33,20 +42,37 @@ public class Order implements Serializable{
         this.id = id;
     }
 
-    public Map<Product, Integer> getProductList() {
+    public List<Product> getProductList() {
         return productList;
     }
 
-    public void setProductList(Map<Product, Integer> productList) {
+    public void setProductList(List<Product> productList) {
         this.productList = productList;
     }
 
-    public Date getDate() {
-        return date;
+    public List<Integer> getQuantityList() {
+        return quantityList;
     }
 
-    public void setDate(Date date) {
-        this.date = date;
+    public void setQuantityList(List<Integer> quantityList) {
+        this.quantityList = quantityList;
     }
+
+//    public DateTimeFormatter getDtf() {
+//        return dtf;
+//    }
+//
+//    public void setDtf(DateTimeFormatter dtf) {
+//        this.dtf = dtf;
+//    }
+//
+//    public LocalDateTime getCurrentDate() {
+//        return currentDate;
+//    }
+//
+//    public void setCurrentDate(LocalDateTime currentDate) {
+//        this.currentDate = currentDate;
+//    }
+    
     
 }
