@@ -1,5 +1,4 @@
-com\arcompany\maven\ScClient.class
 com\arcompany\maven\App.class
-com\arcompany\maven\Ventana.class
+com\arcompany\maven\controllers\ClientController.class
 com\arcompany\maven\entities\Product.class
 com\arcompany\maven\entities\Order.class

@@ -23,10 +23,11 @@ public class App extends Application{
     public void start(Stage primaryStage) throws Exception {
         
         Parent root = FXMLLoader.load(getClass().getResource("/fxml/FXMLclient.fxml"));
-        Scene scene = new Scene(root,900,550);
+        Scene scene = new Scene(root,400,500);
         primaryStage.setScene(scene);
         primaryStage.setTitle("Sales Controller");
         primaryStage.show();
+        
         
     }
 }
