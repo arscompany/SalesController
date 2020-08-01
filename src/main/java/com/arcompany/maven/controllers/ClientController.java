@@ -7,7 +7,11 @@ package com.arcompany.maven.controllers;
 
 
 
+
+import com.arcompany.maven.entities.Order;
 import com.arcompany.maven.entities.Product;
+import java.io.ObjectOutputStream;
+import java.net.Socket;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
@@ -127,6 +131,42 @@ public class ClientController implements Initializable {
         if (spProduct2.isDisable() == false) {
             productList.add(this.product2);
             quantityList.add(spProduct2.getValue());
+        }
+        
+        if (spProduct3.isDisable() == false) {
+            productList.add(this.product3);
+            quantityList.add(spProduct3.getValue());
+        }
+        
+        if (spProduct4.isDisable() == false) {
+            productList.add(this.product4);
+            quantityList.add(spProduct4.getValue());
+        }
+        
+        if (spProduct5.isDisable() == false) {
+            productList.add(this.product5);
+            quantityList.add(spProduct5.getValue());
+        }
+        
+        if (spProduct6.isDisable() == false) {
+            productList.add(this.product6);
+            quantityList.add(spProduct6.getValue());
+        }
+        
+        Order order = new Order(productList,quantityList);
+        
+        try {
+            
+            Socket socket = new Socket("10.0.0.11" , 55555);
+            ObjectOutputStream out = new ObjectOutputStream(socket.getOutputStream());
+            out.writeObject(order);
+            out.close();
+            socket.close();
+            System.out.println("Se ha enviado la orden");
+                
+        }
+        catch (Exception ex) {
+            System.out.println("No se envio la orden");
         }
         
     }

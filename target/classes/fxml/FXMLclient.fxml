@@ -13,7 +13,7 @@
       <CheckBox layoutX="65.0" layoutY="193.0" mnemonicParsing="false" onAction="#ableSpProduct4" text="p4" />
       <CheckBox layoutX="65.0" layoutY="229.0" mnemonicParsing="false" onAction="#ableSpProduct5" text="p5" />
       <CheckBox layoutX="65.0" layoutY="266.0" mnemonicParsing="false" onAction="#ableSpProduct6" text="p6" />
-      <Button layoutX="158.0" layoutY="366.0" mnemonicParsing="false" text="Crear Pedido" />
+      <Button layoutX="158.0" layoutY="366.0" mnemonicParsing="false" onAction="#createOrder" text="Crear Pedido" />
       <Spinner fx:id="spProduct1" layoutX="126.0" layoutY="81.0" />
       <Spinner fx:id="spProduct2" layoutX="126.0" layoutY="117.0" />
       <Spinner fx:id="spProduct3" layoutX="126.0" layoutY="153.0" />
